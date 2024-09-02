@@ -1,11 +1,26 @@
 // index.js
 import './style.css';
-import { greeting } from './greeting.js';
-import odinImage from './odin.svg';
+import { loadHome } from './home.js';
+import { loadMenu } from './menu.js';
 
-const image = document.createElement('img');
-image.src = odinImage;
+const contentDiv = document.querySelector('#content');
 
-document.body.appendChild(image);
+const homeBtn = document.querySelector('#home');
+const menuBtn = document.querySelector('#menu');
+const aboutBtn = document.querySelector('#about');
 
-console.log(greeting);
+loadHome(contentDiv);
+
+homeBtn.addEventListener('click', () => {
+  clearContent(contentDiv);
+  loadHome(contentDiv);
+});
+
+menuBtn.addEventListener('click', () => {
+  clearContent(contentDiv);
+  loadMenu(contentDiv);
+});
+
+function clearContent(container) {
+  container.innerHTML = '';
+}
