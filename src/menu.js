@@ -2,6 +2,21 @@ import margherita from './images/pizzas/margherita.png';
 import pepperoni from './images/pizzas/pepperoni.png';
 
 export function loadMenu(contentDiv) {
+  const menuHeading = document.createElement('div');
+  menuHeading.classList.add('menu-heading');
+
+  const menuTitle = document.createElement('h2');
+  menuTitle.textContent = 'Our Delicious Pizzas';
+
+  const menuParagraph = document.createElement('p');
+  menuParagraph.textContent =
+    'Choose from our wide variety of pizzas made with the freshest ingredients. Each pizza is crafted with care to ensure a delightful experience.';
+
+  menuHeading.appendChild(menuTitle);
+  menuHeading.appendChild(menuParagraph);
+
+  //
+
   const menuGrid = document.createElement('div');
   menuGrid.classList.add('menu-grid');
 
@@ -63,5 +78,6 @@ export function loadMenu(contentDiv) {
     menuGrid.appendChild(menuItem);
   });
 
+  contentDiv.appendChild(menuHeading);
   contentDiv.appendChild(menuGrid);
 }

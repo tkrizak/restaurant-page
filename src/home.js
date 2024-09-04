@@ -1,6 +1,9 @@
 import restaurant from './images/restaurant.jpg';
 
 export function loadHome(contentDiv) {
+  const contentHome = document.createElement('div');
+  contentHome.classList.add('content-home');
+
   const h1 = document.createElement('h1');
   h1.textContent = 'Welcome to Pizza Paradise';
 
@@ -14,9 +17,16 @@ export function loadHome(contentDiv) {
     the true taste of Italy, right in the heart of your neighborhood.`;
 
   const restaurantImg = document.createElement('img');
+  restaurantImg.classList.add('restaurant-img');
   restaurantImg.src = restaurant;
 
-  contentDiv.appendChild(h1);
-  contentDiv.appendChild(description);
-  contentDiv.appendChild(restaurantImg);
+  const order = document.createElement('p');
+  order.textContent = `To place an order, please contact us directly. We look forward to serving you!`;
+
+  contentHome.appendChild(h1);
+  contentHome.appendChild(description);
+  contentHome.appendChild(restaurantImg);
+  contentHome.appendChild(order);
+
+  contentDiv.appendChild(contentHome);
 }
