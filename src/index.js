@@ -2,14 +2,17 @@
 import './style.css';
 import { loadHome } from './home.js';
 import { loadMenu } from './menu.js';
+import { clearContent, socialHover } from './utility.js';
+import { loadContact } from './contact.js';
 
 const contentDiv = document.querySelector('#content');
 
 const homeBtn = document.querySelector('#home');
 const menuBtn = document.querySelector('#menu');
-const aboutBtn = document.querySelector('#about');
+const contactBtn = document.querySelector('#contact');
 
 loadHome(contentDiv);
+socialHover();
 
 homeBtn.addEventListener('click', () => {
   clearContent(contentDiv);
@@ -21,6 +24,7 @@ menuBtn.addEventListener('click', () => {
   loadMenu(contentDiv);
 });
 
-function clearContent(container) {
-  container.innerHTML = '';
-}
+contactBtn.addEventListener('click', () => {
+  clearContent(contentDiv);
+  loadContact(contentDiv);
+});

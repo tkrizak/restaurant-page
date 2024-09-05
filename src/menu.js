@@ -2,10 +2,12 @@ import margherita from './images/pizzas/margherita.png';
 import pepperoni from './images/pizzas/pepperoni.png';
 
 export function loadMenu(contentDiv) {
+  contentDiv.classList.remove('contact-container');
+
   const menuHeading = document.createElement('div');
   menuHeading.classList.add('menu-heading');
 
-  const menuTitle = document.createElement('h2');
+  const menuTitle = document.createElement('h1');
   menuTitle.textContent = 'Our Delicious Pizzas';
 
   const menuParagraph = document.createElement('p');

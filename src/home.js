@@ -1,6 +1,8 @@
 import restaurant from './images/restaurant.jpg';
 
 export function loadHome(contentDiv) {
+  contentDiv.classList.remove('contact-container');
+
   const contentHome = document.createElement('div');
   contentHome.classList.add('content-home');
 

@@ -16,7 +16,7 @@
         <ul>
           <li id="home">Home</li>
           <li id="menu">Menu</li>
-          <li id="about">About</li>
+          <li id="contact">Contact</li>
         </ul>
       </nav>
     </header>
@@ -54,25 +54,69 @@
         </div>
         <div class="footer-social">
           <a href="">
-            <i
-              class="fa-brands fa-square-facebook fa-2x"
-              style="color: #cecece"
-            ></i>
+            <i class="fa-brands fa-square-facebook fa-2x"></i>
           </a>
           <a href="">
-            <i
-              class="fa-brands fa-square-instagram fa-2x"
-              style="color: #cecece"
-            ></i>
+            <i class="fa-brands fa-square-instagram fa-2x"></i>
           </a>
           <a href="">
-            <i
-              class="fa-brands fa-square-x-twitter fa-2x"
-              style="color: #cecece"
-            ></i>
+            <i class="fa-brands fa-square-x-twitter fa-2x"></i>
           </a>
         </div>
       </div>
+      <div class="copyright">
+        <div class="container copyright-container">
+          <p>
+            Copyright © 2024
+            <a href="https://github.com/tkrizak">Tomáš Križák</a>
+          </p>
+          <a href="https://tkrizak.github.io/restaurant-page/"
+            ><i class="fa-brands fa-github fa-2x" aria-hidden="true"></i
+          ></a>
+        </div>
+      </div>
     </footer>
+    <script>
+      ((g) => {
+        var h,
+          a,
+          k,
+          p = 'The Google Maps JavaScript API',
+          c = 'google',
+          l = 'importLibrary',
+          q = '__ib__',
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement('script'));
+              e.set('libraries', [...r] + '');
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set('callback', c + '.maps.' + q);
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + ' could not load.')));
+              a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+              m.head.append(a);
+            }));
+        d[l]
+          ? console.warn(p + ' only loads once. Ignoring:', g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({
+        key: 'AIzaSyAPfWrbXk_oaq4G17gzvCeVDYO2Hgqbkc4',
+        v: 'weekly',
+        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+        // Add other bootstrap parameters as needed, using camel case.
+      });
+    </script>
   </body>
 </html>
